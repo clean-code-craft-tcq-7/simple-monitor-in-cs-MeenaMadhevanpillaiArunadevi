@@ -18,20 +18,21 @@ partial class BMS
         else
             return true;
     }
+    
     //Check whether Temperature is under limit
     static bool TempCheck(float value)
     {
-        return isUnderLimit("Temperature", value, BMS_Threshold.TemperatureMax, BMS_Threshold.TemperatureMin);
+        return isUnderLimit(BMS_KeyParams.Temp_string, value, BMS_Threshold.TemperatureMax, BMS_Threshold.TemperatureMin);
     }
     //Check whether SOC is under limit
     static bool SOCCheck(float value)
     {
-        return isUnderLimit("State of Charge", value, BMS_Threshold.SocMax, BMS_Threshold.SocMin);
+        return isUnderLimit(BMS_KeyParams.SoC_string, value, BMS_Threshold.SocMax, BMS_Threshold.SocMin);
     }
     //Check whether Charge Rate is under limit
     static bool ChargeRateCheck(float value)
     {
-        return isUnderLimit("Charge Rate", value, BMS_Threshold.ChargeRateMax);
+        return isUnderLimit(BMS_KeyParams.ChargeRate_string, value, BMS_Threshold.ChargeRateMax);
     }
     //Check whether Battery condition is safe
     static bool batteryIsOk(float tempValue, float socValue, float chargerateValue)
