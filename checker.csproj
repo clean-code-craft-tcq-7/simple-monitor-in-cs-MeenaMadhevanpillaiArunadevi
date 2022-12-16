@@ -5,6 +5,7 @@
       <Compile Include="BMS_ThresholdLimits.cs"/>
       <Compile Include="BMS_PrintConsole_ThresholdBreach.cs"/>
       <Compile Include="BMS_CheckThresholdBreach.cs"/>
+      <Compile Include="BMS_KeyParams.cs"/>
   </ItemGroup>
   <Target Name="Build">
     <Csc Sources="@(Compile)"/>  
