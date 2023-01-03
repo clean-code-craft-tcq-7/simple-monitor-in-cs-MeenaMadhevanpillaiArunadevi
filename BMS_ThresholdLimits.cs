@@ -1,4 +1,4 @@
-﻿partial class BMS
+partial class BMS
 {
         public class BMS_Threshold
         {
