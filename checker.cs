@@ -1,15 +1,17 @@
 
 using System;
 using System.Diagnostics;
-
-partial class BMS
+namespace BatteryManamgement
 {
-    
-    public static int Main()
+    partial class BMS
     {
-        BMS_Test();
-        Console.WriteLine("All ok");
-        return 0;
+
+        public static int Main()
+        {
+            BMS_Test();
+            Console.WriteLine("All ok");
+            return 0;
+        }
     }
 }
 
