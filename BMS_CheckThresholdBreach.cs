@@ -29,14 +29,16 @@ namespace BatteryManamgement
         static bool isUnderLimit(BMS_KeyParams bmsCriteria, float value, float maxThreshold, float minThreshold = float.NegativeInfinity)
         {
             float ToleranceValue = find_WarningTolerance(maxThreshold);
-            bmsWarningMessage = generateBMS_printMessage(value, maxThreshold, minThreshold, ToleranceValue, bmsCriteria, userPreferredLanguage);
-            
+           
             if (value < minThreshold || value > maxThreshold)
             {
+                bmsWarningMessage = string.Empty;
                 return false;
             }
-            else
+            else{
+                 bmsWarningMessage = generateBMS_printMessage(value, maxThreshold, minThreshold, ToleranceValue, bmsCriteria, userPreferredLanguage);
                 return true;
+            }
         }
         //Check whether Temperature is under limit
         static bool isTemperatureValid(float value)
