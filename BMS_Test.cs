@@ -43,6 +43,12 @@ namespace BatteryManamgement
             Debug.Assert(isChargeRateValid(BMS_Threshold.ChargeRateMax) == true);     //ChargeRate = minthreshold
             Debug.Assert(isChargeRateValid(BMS_Threshold.ChargeRateMax - 5f) == true); //ChargeRate < minthreshold
             Debug.Assert(isChargeRateValid(BMS_Threshold.ChargeRateMax + 5f) == false);//ChargeRate > maxthreshold
+            
+            //Test Message
+            Debug.Assert(generateBMS_printMessage(25, 45, 0, 2.25f, BMS_KeyParams.Temperature, "DE") == "NORMAL");
+            Debug.Assert(generateBMS_printMessage(45, 45, 0, 2.25f, BMS_KeyParams.Temperature, "DE") == "HIGH_WARNUNG");
+            Debug.Assert(generateBMS_printMessage(0, 45, 0, 2.25f, BMS_KeyParams.Temperature, "DE") == "NIEDRIG_WARNUNG");
+
 
         }
     }
